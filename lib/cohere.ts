@@ -45,8 +45,10 @@ export async function generateCohereResponse(
 
   const lastMessage = userMessages[userMessages.length - 1];
 
+  const model = process.env.COHERE_MODEL || "command-r";
+
   const response = await cohere.chat({
-    model: "command-r-plus-08-2024",
+    model,
     message: lastMessage?.content || "",
     chatHistory: chatHistory.length > 0 ? chatHistory : undefined,
     preamble: systemPrompt,
