@@ -13,16 +13,35 @@ export function getCohereClient(): CohereClient {
   return client;
 }
 
+function toCohereRole(role: "user" | "assistant"): "USER" | "CHATBOT" {
+  return role === "user" ? "USER" : "CHATBOT";
+}
+
 export async function generateCohereResponse(
   systemPrompt: string,
   userMessages: Array<{ role: "user" | "assistant"; content: string }>
 ): Promise<string> {
   const cohere = getCohereClient();
 
-  const chatHistory = userMessages.slice(0, -1).map((msg) => ({
-    role: msg.role as "USER" | "CHATBOT",
-    message: msg.content,
-  }));
+  // Build valid chat history: must alternate USER / CHATBOT and not start with CHATBOT
+  const chatHistory: Array<{ role: "USER" | "CHATBOT"; message: string }> = [];
+
+  for (const msg of userMessages.slice(0, -1)) {
+    const cohereRole = toCohereRole(msg.role);
+
+    // If history is empty, it must start with USER
+    if (chatHistory.length === 0 && cohereRole === "CHATBOT") {
+      continue;
+    }
+
+    // Avoid duplicate consecutive roles
+    const lastRole = chatHistory[chatHistory.length - 1]?.role;
+    if (lastRole === cohereRole) {
+      continue;
+    }
+
+    chatHistory.push({ role: cohereRole, message: msg.content });
+  }
 
   const lastMessage = userMessages[userMessages.length - 1];
 
