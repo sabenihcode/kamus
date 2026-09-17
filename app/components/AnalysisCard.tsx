@@ -16,6 +16,7 @@ interface AnalysisCardProps {
     wazan?: string;
     bab?: string;
     meaning?: string;
+    translation?: string;
     prefix?: string;
     suffix?: string;
     baseWord?: string;
@@ -116,6 +117,12 @@ export default function AnalysisCard({ analysis, isim, tashrif }: AnalysisCardPr
             <div className="col-span-2">
               <span className="text-xs text-slate-500">Arti</span>
               <p className="text-sm font-medium text-slate-900">{analysis.meaning}</p>
+            </div>
+          )}
+          {analysis.translation && analysis.translation !== analysis.meaning && (
+            <div className="col-span-2">
+              <span className="text-xs text-slate-500">Terjemahan</span>
+              <p className="text-sm font-medium text-slate-900">{analysis.translation}</p>
             </div>
           )}
         </div>
