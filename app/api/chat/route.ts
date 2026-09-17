@@ -105,7 +105,9 @@ ${datasetContext}
 
 `;
 
-  if (hasMultipleWords || ctx.asksForSentenceAnalysis) {
+  if (analysis.primaryWord?.type === "unknown") {
+    instruction += `Kata Arab yang diberikan pengguna TIDAK DITEMUKAN dalam dataset. Jawab dengan jelas: "Kata ${analysis.primaryWord.word} belum tersedia dalam dataset." Jangan membuat tabel analisis, akar, wazan, atau arti. Jelaskan bahwa pengguna dapat menambahkannya ke data/dictionary.json.`;
+  } else if (hasMultipleWords || ctx.asksForSentenceAnalysis) {
     instruction += `Pengguna memberikan frasa/kalimat bahasa Arab. Untuk SETIAP kata Arab, tentukan kata aslinya dengan melepas awalan seperti وَ (dan), الْ (al-), بِ, كِ, لِ, فَ, لِ, ثُمَّ, dll. Berikan tabel analisis per kata dengan kolom: Kata Asli, Jenis, Analisis, Arti. Jika diminta i'rab, tambahkan tabel i'rab. Berikan terjemahan singkat frasa/kalimat tersebut.`;
   } else if (analysis.isimAnalysis) {
     instruction += `Pengguna menanyakan tentang sebuah isim. Berikan analisis lengkap: tipe isim, akar kata, wazan, arti, gender (mudzakkar/muannats), dan bentuk-bentuknya (mufrad, mutsanna, jamak).`;
