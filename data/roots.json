@@ -1,0 +1,64 @@
+{
+  "roots": {
+    "ك ت ب": {
+      "letters": ["ك", "ت", "ب"],
+      "core_meaning": "menulis / mencatat",
+      "common_words": ["كَتَبَ", "يَكْتُبُ", "كِتَابٌ", "كَاتِبٌ", "مَكْتُوبٌ", "كِتَابَةٌ"]
+    },
+    "ق ر أ": {
+      "letters": ["ق", "ر", "أ"],
+      "core_meaning": "membaca / membaca dengan tartil",
+      "common_words": ["قَرَأَ", "يَقْرَأُ", "قِرَاءَةٌ", "قَارِئٌ", "مَقْرُوءٌ"]
+    },
+    "ذ ه ب": {
+      "letters": ["ذ", "ه", "ب"],
+      "core_meaning": "pergi / meninggalkan",
+      "common_words": ["ذَهَبَ", "يَذْهَبُ", "مَذْهَبٌ", "ذَاهِبٌ"]
+    },
+    "ف ت ح": {
+      "letters": ["ف", "ت", "ح"],
+      "core_meaning": "membuka / menaklukkan",
+      "common_words": ["فَتَحَ", "يَفْتَحُ", "فَتْحٌ", "فَاتِحٌ", "مَفْتُوحٌ", "مِفْتَاحٌ"]
+    },
+    "أ ك ل": {
+      "letters": ["أ", "ك", "ل"],
+      "core_meaning": "makan",
+      "common_words": ["أَكَلَ", "يَأْكُلُ", "أَكْلٌ", "آكِلٌ", "مَأْكُولٌ"]
+    },
+    "ش ر ب": {
+      "letters": ["ش", "ر", "ب"],
+      "core_meaning": "minum",
+      "common_words": ["شَرِبَ", "يَشْرَبُ", "شُرْبٌ", "شَارِبٌ", "مَشْرُوبٌ"]
+    },
+    "ج ل س": {
+      "letters": ["ج", "ل", "س"],
+      "core_meaning": "duduk",
+      "common_words": ["جَلَسَ", "يَجْلِسُ", "جُلُوسٌ", "جَالِسٌ", "مَجْلِسٌ"]
+    },
+    "ف ه م": {
+      "letters": ["ف", "ه", "م"],
+      "core_meaning": "mengerti / memahami",
+      "common_words": ["فَهِمَ", "يَفْهَمُ", "فَهْمٌ", "فَاهِمٌ", "مَفْهُومٌ"]
+    },
+    "ع ل م": {
+      "letters": ["ع", "ل", "م"],
+      "core_meaning": "tahu / mengetahui",
+      "common_words": ["عَلِمَ", "يَعْلَمُ", "عِلْمٌ", "عَالِمٌ", "مَعْلُومٌ"]
+    },
+    "س م ع": {
+      "letters": ["س", "م", "ع"],
+      "core_meaning": "mendengar",
+      "common_words": ["سَمِعَ", "يَسْمَعُ", "سَمْعٌ", "سَامِعٌ", "مَسْمُوعٌ"]
+    },
+    "ر أ ي": {
+      "letters": ["ر", "أ", "ي"],
+      "core_meaning": "melihat / berpendapat",
+      "common_words": ["رَأَى", "يَرَى", "رَأْيٌ", "رَائٍ", "مَرْءِيٌّ"]
+    },
+    "ق ر ب": {
+      "letters": ["ق", "ر", "ب"],
+      "core_meaning": "dekat",
+      "common_words": ["قَرُبَ", "يَقْرُبُ", "قُرْبَةٌ", "قَرِيبٌ"]
+    }
+  }
+}

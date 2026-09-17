@@ -1,0 +1,1028 @@
+{
+  "entries": {
+    "كَتَبَ": {
+      "type": "fi'il",
+      "root": ["ك", "ت", "ب"],
+      "bab": "فَعَلَ - يَفْعُلُ",
+      "wazan": "فَعَلَ",
+      "meaning": "menulis",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَكْتُبُ": {
+      "type": "fi'il",
+      "root": ["ك", "ت", "ب"],
+      "bab": "فَعَلَ - يَفْعُلُ",
+      "wazan": "يَفْعُلُ",
+      "meaning": "dia menulis",
+      "category": "tsulatsi_mujarrad"
+    },
+    "مَكْتُوبٌ": {
+      "type": "isim",
+      "root": ["ك", "ت", "ب"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang ditulis / tertulis",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "كَاتِبٌ": {
+      "type": "isim",
+      "root": ["ك", "ت", "ب"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "penulis",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "كُتَّابٌ"
+    },
+    "كِتَابَةٌ": {
+      "type": "isim",
+      "root": ["ك", "ت", "ب"],
+      "wazan": "فِعَالَةٌ",
+      "meaning": "penulisan",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "muannats"
+    },
+    "كِتَابٌ": {
+      "type": "isim",
+      "root": ["ك", "ت", "ب"],
+      "wazan": "فِعَالٌ",
+      "meaning": "buku",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "mudzakkar",
+      "plural": "كُتُبٌ"
+    },
+    "قَرَأَ": {
+      "type": "fi'il",
+      "root": ["ق", "ر", "أ"],
+      "bab": "فَعَلَ - يَفْعَلُ",
+      "wazan": "فَعَلَ",
+      "meaning": "membaca",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَقْرَأُ": {
+      "type": "fi'il",
+      "root": ["ق", "ر", "أ"],
+      "bab": "فَعَلَ - يَفْعَلُ",
+      "wazan": "يَفْعَلُ",
+      "meaning": "dia membaca",
+      "category": "tsulatsi_mujarrad"
+    },
+    "مَقْرُوءٌ": {
+      "type": "isim",
+      "root": ["ق", "ر", "أ"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang dibaca",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "قَارِئٌ": {
+      "type": "isim",
+      "root": ["ق", "ر", "أ"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "pembaca",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "قُرَّاءٌ"
+    },
+    "قِرَاءَةٌ": {
+      "type": "isim",
+      "root": ["ق", "ر", "أ"],
+      "wazan": "فِعَالَةٌ",
+      "meaning": "pembacaan",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "muannats"
+    },
+    "ذَهَبَ": {
+      "type": "fi'il",
+      "root": ["ذ", "ه", "ب"],
+      "bab": "فَعَلَ - يَذْهَبُ",
+      "wazan": "فَعَلَ",
+      "meaning": "pergi",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَذْهَبُ": {
+      "type": "fi'il",
+      "root": ["ذ", "ه", "ب"],
+      "bab": "فَعَلَ - يَفْعُلُ",
+      "wazan": "يَفْعُلُ",
+      "meaning": "dia pergi",
+      "category": "tsulatsi_mujarrad"
+    },
+    "مَذْهُوبٌ": {
+      "type": "isim",
+      "root": ["ذ", "ه", "ب"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang pergi",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "ذَاهِبٌ": {
+      "type": "isim",
+      "root": ["ذ", "ه", "ب"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "yang pergi / pelaku pergi",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "ذَاهِبُونَ"
+    },
+    "مَكْتَبَةٌ": {
+      "type": "isim",
+      "root": ["ك", "ت", "ب"],
+      "wazan": "مَفْعَلَةٌ",
+      "meaning": "perpustakaan / tempat menulis",
+      "category": "isim_makan",
+      "tags": ["isim_makan"],
+      "gender": "muannats",
+      "plural": "مَكْتَبَاتٌ"
+    },
+    "مِفْتَاحٌ": {
+      "type": "isim",
+      "root": ["ف", "ت", "ح"],
+      "wazan": "مِفْعَالٌ",
+      "meaning": "kunci",
+      "category": "isim_alat",
+      "tags": ["isim_alat"],
+      "gender": "mudzakkar",
+      "plural": "مَفَاتِيحُ"
+    },
+    "فَتَحَ": {
+      "type": "fi'il",
+      "root": ["ف", "ت", "ح"],
+      "bab": "فَعَلَ - يَفْتَحُ",
+      "wazan": "فَعَلَ",
+      "meaning": "membuka",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَفْتَحُ": {
+      "type": "fi'il",
+      "root": ["ف", "ت", "ح"],
+      "bab": "فَعَلَ - يَفْعَلُ",
+      "wazan": "يَفْعَلُ",
+      "meaning": "dia membuka",
+      "category": "tsulatsi_mujarrad"
+    },
+    "فَاتِحٌ": {
+      "type": "isim",
+      "root": ["ف", "ت", "ح"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "pembuka",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "فَاتِحُونَ"
+    },
+    "مَفْتُوحٌ": {
+      "type": "isim",
+      "root": ["ف", "ت", "ح"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang dibuka / terbuka",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "أَكَلَ": {
+      "type": "fi'il",
+      "root": ["أ", "ك", "ل"],
+      "bab": "فَعَلَ - يَأْكُلُ",
+      "wazan": "فَعَلَ",
+      "meaning": "makan",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَأْكُلُ": {
+      "type": "fi'il",
+      "root": ["أ", "ك", "ل"],
+      "bab": "فَعَلَ - يَفْعُلُ",
+      "wazan": "يَفْعُلُ",
+      "meaning": "dia makan",
+      "category": "tsulatsi_mujarrad"
+    },
+    "آكِلٌ": {
+      "type": "isim",
+      "root": ["أ", "ك", "ل"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "yang makan",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "آكِلُونَ"
+    },
+    "مَأْكُولٌ": {
+      "type": "isim",
+      "root": ["أ", "ك", "ل"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang dimakan",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "شَرِبَ": {
+      "type": "fi'il",
+      "root": ["ش", "ر", "ب"],
+      "bab": "فَعِلَ - يَشْرَبُ",
+      "wazan": "فَعِلَ",
+      "meaning": "minum",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَشْرَبُ": {
+      "type": "fi'il",
+      "root": ["ش", "ر", "ب"],
+      "bab": "فَعِلَ - يَفْعَلُ",
+      "wazan": "يَفْعَلُ",
+      "meaning": "dia minum",
+      "category": "tsulatsi_mujarrad"
+    },
+    "شَارِبٌ": {
+      "type": "isim",
+      "root": ["ش", "ر", "ب"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "peminum",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "شُرَّابٌ"
+    },
+    "مَشْرُوبٌ": {
+      "type": "isim",
+      "root": ["ش", "ر", "ب"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang diminum",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "جَلَسَ": {
+      "type": "fi'il",
+      "root": ["ج", "ل", "س"],
+      "bab": "فَعَلَ - يَجْلِسُ",
+      "wazan": "فَعَلَ",
+      "meaning": "duduk",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَجْلِسُ": {
+      "type": "fi'il",
+      "root": ["ج", "ل", "س"],
+      "bab": "فَعَلَ - يَفْعِلُ",
+      "wazan": "يَفْعِلُ",
+      "meaning": "dia duduk",
+      "category": "tsulatsi_mujarrad"
+    },
+    "جَالِسٌ": {
+      "type": "isim",
+      "root": ["ج", "ل", "س"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "yang duduk",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "جَالِسُونَ"
+    },
+    "مَجْلِسٌ": {
+      "type": "isim",
+      "root": ["ج", "ل", "س"],
+      "wazan": "مَفْعَلٌ",
+      "meaning": "tempat duduk / majelis",
+      "category": "isim_makan",
+      "tags": ["isim_makan"],
+      "gender": "mudzakkar",
+      "plural": "مَجَالِسُ"
+    },
+    "فَهِمَ": {
+      "type": "fi'il",
+      "root": ["ف", "ه", "م"],
+      "bab": "فَعِلَ - يَفْهَمُ",
+      "wazan": "فَعِلَ",
+      "meaning": "mengerti",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَفْهَمُ": {
+      "type": "fi'il",
+      "root": ["ف", "ه", "م"],
+      "bab": "فَعِلَ - يَفْعَلُ",
+      "wazan": "يَفْعَلُ",
+      "meaning": "dia mengerti",
+      "category": "tsulatsi_mujarrad"
+    },
+    "فَاهِمٌ": {
+      "type": "isim",
+      "root": ["ف", "ه", "م"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "yang mengerti",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "فَاهِمُونَ"
+    },
+    "مَفْهُومٌ": {
+      "type": "isim",
+      "root": ["ف", "ه", "م"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang dipahami",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "عَلِمَ": {
+      "type": "fi'il",
+      "root": ["ع", "ل", "م"],
+      "bab": "فَعِلَ - يَعْلَمُ",
+      "wazan": "فَعِلَ",
+      "meaning": "tahu / mengetahui",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَعْلَمُ": {
+      "type": "fi'il",
+      "root": ["ع", "ل", "م"],
+      "bab": "فَعِلَ - يَفْعَلُ",
+      "wazan": "يَفْعَلُ",
+      "meaning": "dia tahu",
+      "category": "tsulatsi_mujarrad"
+    },
+    "عَالِمٌ": {
+      "type": "isim",
+      "root": ["ع", "ل", "م"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "orang yang tahu / ulama",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "عُلَمَاءُ"
+    },
+    "مَعْلُومٌ": {
+      "type": "isim",
+      "root": ["ع", "ل", "م"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang diketahui",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "عِلْمٌ": {
+      "type": "isim",
+      "root": ["ع", "ل", "م"],
+      "wazan": "فِعْلٌ",
+      "meaning": "ilmu",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar",
+      "plural": "عُلُومٌ"
+    },
+    "سَمِعَ": {
+      "type": "fi'il",
+      "root": ["س", "م", "ع"],
+      "bab": "فَعِلَ - يَسْمَعُ",
+      "wazan": "فَعِلَ",
+      "meaning": "mendengar",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَسْمَعُ": {
+      "type": "fi'il",
+      "root": ["س", "م", "ع"],
+      "bab": "فَعِلَ - يَفْعَلُ",
+      "wazan": "يَفْعَلُ",
+      "meaning": "dia mendengar",
+      "category": "tsulatsi_mujarrad"
+    },
+    "سَامِعٌ": {
+      "type": "isim",
+      "root": ["س", "م", "ع"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "pendengar",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "سَامِعُونَ"
+    },
+    "مَسْمُوعٌ": {
+      "type": "isim",
+      "root": ["س", "م", "ع"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang didengar",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "رَأَى": {
+      "type": "fi'il",
+      "root": ["ر", "أ", "ي"],
+      "bab": "فَعَلَ - يَرَى",
+      "wazan": "فَعَلَ",
+      "meaning": "melihat",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَرَى": {
+      "type": "fi'il",
+      "root": ["ر", "أ", "ي"],
+      "bab": "فَعَلَ - يَفْعَلُ",
+      "wazan": "يَفْعَلُ",
+      "meaning": "dia melihat",
+      "category": "tsulatsi_mujarrad"
+    },
+    "رَائٍ": {
+      "type": "isim",
+      "root": ["ر", "أ", "ي"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "yang melihat",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar"
+    },
+    "مَرْءِيٌّ": {
+      "type": "isim",
+      "root": ["ر", "أ", "ي"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang dilihat",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "قُرْبَةٌ": {
+      "type": "isim",
+      "root": ["ق", "ر", "ب"],
+      "wazan": "فُعْلَةٌ",
+      "meaning": "pendekatan / sesuatu yang mendekatkan diri kepada Allah",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "muannats",
+      "plural": "قُرَبٌ"
+    },
+    "قَرُبَ": {
+      "type": "fi'il",
+      "root": ["ق", "ر", "ب"],
+      "bab": "فَعُلَ - يَقْرُبُ",
+      "wazan": "فَعُلَ",
+      "meaning": "dekat",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَقْرُبُ": {
+      "type": "fi'il",
+      "root": ["ق", "ر", "ب"],
+      "bab": "فَعُلَ - يَفْعُلُ",
+      "wazan": "يَفْعُلُ",
+      "meaning": "dia mendekat",
+      "category": "tsulatsi_mujarrad"
+    },
+    "قُرْبَاتٌ": {
+      "type": "isim",
+      "root": ["ق", "ر", "ب"],
+      "wazan": "فُعْلَاتٌ",
+      "meaning": "berbagai cara pendekatan / amalan-amalan yang mendekatkan",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "muannats"
+    },
+    "طَالِبٌ": {
+      "type": "isim",
+      "root": ["ط", "ل", "ب"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "pelajar / murid / yang meminta",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "طُلَّابٌ"
+    },
+    "دَرْسٌ": {
+      "type": "isim",
+      "root": ["د", "ر", "س"],
+      "wazan": "فُعْلٌ",
+      "meaning": "pelajaran",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar",
+      "plural": "دُرُوسٌ"
+    },
+    "بَيْتٌ": {
+      "type": "isim",
+      "root": ["ب", "ي", "ت"],
+      "wazan": "فَيْعَلٌ",
+      "meaning": "rumah",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "mudzakkar",
+      "plural": "بُيُوتٌ"
+    },
+    "مَسْجِدٌ": {
+      "type": "isim",
+      "root": ["س", "ج", "د"],
+      "wazan": "مَفْعِلٌ",
+      "meaning": "masjid / tempat sujud",
+      "category": "isim_makan",
+      "tags": ["isim_makan"],
+      "gender": "mudzakkar",
+      "plural": "مَسَاجِدُ"
+    },
+    "صَلَّى": {
+      "type": "fi'il",
+      "root": ["ص", "ل", "ي"],
+      "bab": "فَعَّلَ - يُفَعِّلُ",
+      "wazan": "فَعَّلَ",
+      "meaning": "shalat / berdoa",
+      "category": "tsulatsi_mazid"
+    },
+    "يُصَلِّي": {
+      "type": "fi'il",
+      "root": ["ص", "ل", "ي"],
+      "bab": "فَعَّلَ - يُفَعِّلُ",
+      "wazan": "يُفَعِّلُ",
+      "meaning": "dia shalat",
+      "category": "tsulatsi_mazid"
+    },
+    "مُصَلٍّ": {
+      "type": "isim",
+      "root": ["ص", "ل", "ي"],
+      "wazan": "مُفَعِّلٌ",
+      "meaning": "orang yang shalat",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "مُصَلُّونَ"
+    },
+    "لِقَاءٌ": {
+      "type": "isim",
+      "root": ["ل", "ق", "ي"],
+      "wazan": "فِعَالٌ",
+      "meaning": "pertemuan / perjumpaan",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar",
+      "plural": "لِقَاءَاتٌ"
+    },
+    "اِلْتِقَاءٌ": {
+      "type": "isim",
+      "root": ["ل", "ق", "ي"],
+      "wazan": "اِفْتِعَالٌ",
+      "meaning": "pertemuan / saling bertemu",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar",
+      "plural": "اِلْتِقَاءَاتٌ"
+    },
+    "لَقِيَ": {
+      "type": "fi'il",
+      "root": ["ل", "ق", "ي"],
+      "bab": "فَعِلَ - يَلْقَى",
+      "wazan": "فَعِلَ",
+      "meaning": "bertemu",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَلْقَى": {
+      "type": "fi'il",
+      "root": ["ل", "ق", "ي"],
+      "bab": "فَعِلَ - يَفْعَى",
+      "wazan": "يَفْعَى",
+      "meaning": "dia bertemu",
+      "category": "tsulatsi_mujarrad"
+    },
+    "سَاكِنٌ": {
+      "type": "isim",
+      "root": ["س", "ك", "ن"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "yang diam / penduduk",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "سَاكِنُونَ"
+    },
+    "سَكَنَ": {
+      "type": "fi'il",
+      "root": ["س", "ك", "ن"],
+      "bab": "فَعَلَ - يَسْكُنُ",
+      "wazan": "فَعَلَ",
+      "meaning": "tinggal / diam",
+      "category": "tsulatsi_mujarrad"
+    },
+    "نَصَرَ": {
+      "type": "fi'il",
+      "root": ["ن", "ص", "ر"],
+      "bab": "فَعَلَ - يَنْصُرُ",
+      "wazan": "فَعَلَ",
+      "meaning": "menolong",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَنْصُرُ": {
+      "type": "fi'il",
+      "root": ["ن", "ص", "ر"],
+      "bab": "فَعَلَ - يَفْعُلُ",
+      "wazan": "يَفْعُلُ",
+      "meaning": "dia menolong",
+      "category": "tsulatsi_mujarrad"
+    },
+    "نَاصِرٌ": {
+      "type": "isim",
+      "root": ["ن", "ص", "ر"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "penolong",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "نَاصِرُونَ"
+    },
+    "مَنْصُورٌ": {
+      "type": "isim",
+      "root": ["ن", "ص", "ر"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang ditolong",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "نَصْرٌ": {
+      "type": "isim",
+      "root": ["ن", "ص", "ر"],
+      "wazan": "فَعْلٌ",
+      "meaning": "pertolongan",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar"
+    },
+    "سَاعَةٌ": {
+      "type": "isim",
+      "root": ["س", "و", "ع"],
+      "wazan": "فَاعَلَةٌ",
+      "meaning": "jam / waktu",
+      "category": "isim_zaman",
+      "tags": ["isim_zaman"],
+      "gender": "muannats",
+      "plural": "سَاعَاتٌ"
+    },
+    "قَلَمٌ": {
+      "type": "isim",
+      "root": ["ق", "ل", "م"],
+      "wazan": "فَعَلٌ",
+      "meaning": "pulpen / pena",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "mudzakkar",
+      "plural": "أَقْلَامٌ"
+    },
+    "كَرِيمٌ": {
+      "type": "isim",
+      "root": ["ك", "ر", "م"],
+      "wazan": "فَعِيلٌ",
+      "meaning": "mulia / dermawan",
+      "category": "sifat_musyabbahah",
+      "tags": ["sifat_musyabbahah"],
+      "gender": "mudzakkar",
+      "plural": "كِرَامٌ"
+    },
+    "جَمِيلٌ": {
+      "type": "isim",
+      "root": ["ج", "م", "ل"],
+      "wazan": "فَعِيلٌ",
+      "meaning": "indah / cantik",
+      "category": "sifat_musyabbahah",
+      "tags": ["sifat_musyabbahah"],
+      "gender": "mudzakkar",
+      "plural": "جِمَالٌ"
+    },
+    "عَبَدَ": {
+      "type": "fi'il",
+      "root": ["ع", "ب", "د"],
+      "bab": "فَعَلَ - يَعْبُدُ",
+      "wazan": "فَعَلَ",
+      "meaning": "menyembah / beribadah",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَعْبُدُ": {
+      "type": "fi'il",
+      "root": ["ع", "ب", "د"],
+      "bab": "فَعَلَ - يَفْعُلُ",
+      "wazan": "يَفْعُلُ",
+      "meaning": "dia menyembah",
+      "category": "tsulatsi_mujarrad"
+    },
+    "نَعْبُدُ": {
+      "type": "fi'il",
+      "root": ["ع", "ب", "د"],
+      "bab": "فَعَلَ - يَفْعُلُ",
+      "wazan": "نَفْعُلُ",
+      "meaning": "kami menyembah",
+      "category": "tsulatsi_mujarrad"
+    },
+    "عَابِدٌ": {
+      "type": "isim",
+      "root": ["ع", "ب", "د"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "orang yang menyembah / hamba",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "عَابِدُونَ"
+    },
+    "مَعْبُودٌ": {
+      "type": "isim",
+      "root": ["ع", "ب", "د"],
+      "wazan": "مَفْعُولٌ",
+      "meaning": "yang disembah (Allah)",
+      "category": "isim_maf'ul",
+      "tags": ["isim_maf'ul"],
+      "gender": "mudzakkar"
+    },
+    "عِبَادَةٌ": {
+      "type": "isim",
+      "root": ["ع", "ب", "د"],
+      "wazan": "فِعَالَةٌ",
+      "meaning": "ibadah / penyembahan",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "muannats",
+      "plural": "عِبَادَاتٌ"
+    },
+    "عَبْدٌ": {
+      "type": "isim",
+      "root": ["ع", "ب", "د"],
+      "wazan": "فَعْلٌ",
+      "meaning": "hamba / budak",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "mudzakkar",
+      "plural": "عَبِيدٌ"
+    },
+    "أَنْعَمْتَ": {
+      "type": "fi'il",
+      "root": ["ن", "ع", "م"],
+      "bab": "أَفْعَلَ - يُفْعِلُ",
+      "wazan": "أَنْعَمْتَ",
+      "meaning": "Engkau telah memberi nikmat",
+      "category": "tsulatsi_mazid"
+    },
+    "نِعْمَةٌ": {
+      "type": "isim",
+      "root": ["ن", "ع", "م"],
+      "wazan": "فِعْلَةٌ",
+      "meaning": "nikmat",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "muannats",
+      "plural": "نِعَمٌ"
+    },
+    "صِرَاطٌ": {
+      "type": "isim",
+      "root": ["ص", "ر", "ط"],
+      "wazan": "فِعَالٌ",
+      "meaning": "jalan / jalan lurus",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "mudzakkar",
+      "plural": "صُرُطٌ"
+    },
+    "هَدَى": {
+      "type": "fi'il",
+      "root": ["ه", "د", "ي"],
+      "bab": "فَعَلَ - يَهْدِي",
+      "wazan": "فَعَلَ",
+      "meaning": "memberi petunjuk / menunjuki",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَهْدِي": {
+      "type": "fi'il",
+      "root": ["ه", "د", "ي"],
+      "bab": "فَعَلَ - يَفْعِلُ",
+      "wazan": "يَفْعِلُ",
+      "meaning": "dia memberi petunjuk",
+      "category": "tsulatsi_mujarrad"
+    },
+    "هَادٍ": {
+      "type": "isim",
+      "root": ["ه", "د", "ي"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "yang memberi petunjuk / pemberi petunjuk",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar"
+    },
+    "هُدًى": {
+      "type": "isim",
+      "root": ["ه", "د", "ي"],
+      "wazan": "فُعْلَى",
+      "meaning": "petunjuk",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "muannats"
+    },
+    "اِهْدِنَا": {
+      "type": "fi'il",
+      "root": ["ه", "د", "ي"],
+      "bab": "فَعَلَ - يَهْدِي",
+      "wazan": "اِفْعِلْ",
+      "meaning": "tunjukilah kami",
+      "category": "tsulatsi_mujarrad"
+    },
+    "ذَرِيَّةٌ": {
+      "type": "isim",
+      "root": ["ذ", "ر", "ي"],
+      "wazan": "فَعِيلَةٌ",
+      "meaning": "keturunan / anak cucu",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "muannats",
+      "plural": "ذَرَارِيُّ"
+    },
+    "رَحْمَةٌ": {
+      "type": "isim",
+      "root": ["ر", "ح", "م"],
+      "wazan": "فَعْلَةٌ",
+      "meaning": "rahmat / kasih sayang",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "muannats",
+      "plural": "رَحَمَاتٌ"
+    },
+    "رَحِيمٌ": {
+      "type": "isim",
+      "root": ["ر", "ح", "م"],
+      "wazan": "فَعِيلٌ",
+      "meaning": "maha penyayang",
+      "category": "sifat_musyabbahah",
+      "tags": ["sifat_musyabbahah"],
+      "gender": "mudzakkar"
+    },
+    "عَالَمٌ": {
+      "type": "isim",
+      "root": ["ع", "ل", "م"],
+      "wazan": "فَاعَلٌ",
+      "meaning": "alam / dunia",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "mudzakkar",
+      "plural": "عَالَمُونَ"
+    },
+    "عَالَمِينَ": {
+      "type": "isim",
+      "root": ["ع", "ل", "م"],
+      "wazan": "فَاعِلُونَ",
+      "meaning": "seluruh alam / semesta",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "mudzakkar"
+    },
+    "مُسْلِمٌ": {
+      "type": "isim",
+      "root": ["س", "ل", "م"],
+      "wazan": "مُفْعِلٌ",
+      "meaning": "orang yang berserah diri / muslim",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "مُسْلِمُونَ"
+    },
+    "إِسْلَامٌ": {
+      "type": "isim",
+      "root": ["س", "ل", "م"],
+      "wazan": "إِفْعَالٌ",
+      "meaning": "islam / berserah diri",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar"
+    },
+    "سَلَامٌ": {
+      "type": "isim",
+      "root": ["س", "ل", "م"],
+      "wazan": "فَعَالٌ",
+      "meaning": "kedamaian / salam",
+      "category": "isim_jamid",
+      "tags": ["isim_jamid"],
+      "gender": "mudzakkar"
+    },
+    "كَافِرٌ": {
+      "type": "isim",
+      "root": ["ك", "ف", "ر"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "orang yang kafir / ingkar",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "كَافِرُونَ"
+    },
+    "كُفْرٌ": {
+      "type": "isim",
+      "root": ["ك", "ف", "ر"],
+      "wazan": "فُعْلٌ",
+      "meaning": "kekafiran / ingkar",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar"
+    },
+    "يَكْفُرُ": {
+      "type": "fi'il",
+      "root": ["ك", "ف", "ر"],
+      "bab": "فَعَلَ - يَفْعُلُ",
+      "wazan": "يَفْعُلُ",
+      "meaning": "dia kafir / ingkar",
+      "category": "tsulatsi_mujarrad"
+    },
+    "آمَنَ": {
+      "type": "fi'il",
+      "root": ["أ", "م", "ن"],
+      "bab": "فَعَلَ - يُؤْمِنُ",
+      "wazan": "فَعَلَ",
+      "meaning": "beriman",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يُؤْمِنُ": {
+      "type": "fi'il",
+      "root": ["أ", "م", "ن"],
+      "bab": "فَعَلَ - يَفْعَلُ",
+      "wazan": "يُفْعِلُ",
+      "meaning": "dia beriman",
+      "category": "tsulatsi_mujarrad"
+    },
+    "مُؤْمِنٌ": {
+      "type": "isim",
+      "root": ["أ", "م", "ن"],
+      "wazan": "مُفْعِلٌ",
+      "meaning": "orang yang beriman",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "مُؤْمِنُونَ"
+    },
+    "إِيمَانٌ": {
+      "type": "isim",
+      "root": ["أ", "م", "ن"],
+      "wazan": "إِفْعَالٌ",
+      "meaning": "keimanan",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar"
+    },
+    "إِيَّاكَ": {
+      "type": "isim",
+      "root": [],
+      "wazan": "—",
+      "meaning": "Engkau (kamu) - bentuk objek",
+      "category": "isim_dhomir",
+      "tags": ["isim_dhomir"],
+      "gender": "mudzakkar"
+    },
+    "اِسْتَعَانَ": {
+      "type": "fi'il",
+      "root": ["ع", "و", "ن"],
+      "bab": "اِسْتَفْعَلَ - يَسْتَفْعِلُ",
+      "wazan": "اِسْتَفْعَلَ",
+      "meaning": "meminta tolong / memohon pertolongan",
+      "category": "tsulatsi_mazid"
+    },
+    "نَسْتَعِينُ": {
+      "type": "fi'il",
+      "root": ["ع", "و", "ن"],
+      "bab": "اِسْتَفْعَلَ - يَسْتَفْعِلُ",
+      "wazan": "نَسْتَفْعِلُ",
+      "meaning": "kami memohon pertolongan",
+      "category": "tsulatsi_mazid"
+    },
+    "مُسْتَعِينٌ": {
+      "type": "isim",
+      "root": ["ع", "و", "ن"],
+      "wazan": "مُسْتَفْعِلٌ",
+      "meaning": "orang yang meminta pertolongan",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "مُسْتَعِينُونَ"
+    },
+    "عَمِلَ": {
+      "type": "fi'il",
+      "root": ["ع", "م", "ل"],
+      "bab": "فَعِلَ - يَعْمَلُ",
+      "wazan": "فَعِلَ",
+      "meaning": "bekerja / berbuat",
+      "category": "tsulatsi_mujarrad"
+    },
+    "يَعْمَلُ": {
+      "type": "fi'il",
+      "root": ["ع", "م", "ل"],
+      "bab": "فَعِلَ - يَفْعَلُ",
+      "wazan": "يَفْعَلُ",
+      "meaning": "dia bekerja",
+      "category": "tsulatsi_mujarrad"
+    },
+    "عَامِلٌ": {
+      "type": "isim",
+      "root": ["ع", "م", "ل"],
+      "wazan": "فَاعِلٌ",
+      "meaning": "pekerja / pelaku",
+      "category": "isim_fa'il",
+      "tags": ["isim_fa'il"],
+      "gender": "mudzakkar",
+      "plural": "عَامِلُونَ"
+    },
+    "عَمَلٌ": {
+      "type": "isim",
+      "root": ["ع", "م", "ل"],
+      "wazan": "فَعْلٌ",
+      "meaning": "pekerjaan / perbuatan",
+      "category": "masdar",
+      "tags": ["masdar"],
+      "gender": "mudzakkar",
+      "plural": "أَعْمَالٌ"
+    }
+  }
+}

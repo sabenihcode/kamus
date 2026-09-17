@@ -1,0 +1,95 @@
+{
+  "particles": {
+    "وَ": {
+      "type": "harf",
+      "name": "wawu 'athf",
+      "meaning": "dan",
+      "category": "conjunction",
+      "usage": "menghubungkan dua kata, frasa, atau kalimat"
+    },
+    "فِي": {
+      "type": "harf",
+      "name": "harf jarr",
+      "meaning": "di / dalam",
+      "category": "preposition",
+      "usage": "menunjukkan tempat, waktu, atau keadaan; menyebabkan isim setelahnya menjadi majrur"
+    },
+    "مِنْ": {
+      "type": "harf",
+      "name": "harf jarr",
+      "meaning": "dari",
+      "category": "preposition",
+      "usage": "menunjukkan asal, bagian, atau penyebab; menyebabkan isim setelahnya menjadi majrur"
+    },
+    "إِلَى": {
+      "type": "harf",
+      "name": "harf jarr",
+      "meaning": "ke / kepada",
+      "category": "preposition",
+      "usage": "menunjukkan arah atau tujuan; menyebabkan isim setelahnya menjadi majrur"
+    },
+    "عَلَى": {
+      "type": "harf",
+      "name": "harf jarr",
+      "meaning": "atas / di atas",
+      "category": "preposition",
+      "usage": "menunjukkan kedudukan di atas; menyebabkan isim setelahnya menjadi majrur"
+    },
+    "بِ": {
+      "type": "harf",
+      "name": "harf jarr",
+      "meaning": "dengan",
+      "category": "preposition",
+      "usage": "menunjukkan alat, penyebab, atau pendamping; menyebabkan isim setelahnya menjadi majrur"
+    },
+    "لِ": {
+      "type": "harf",
+      "name": "harf jarr",
+      "meaning": "untuk / milik",
+      "category": "preposition",
+      "usage": "menunjukkan tujuan, kepemilikan, atau khusus; menyebabkan isim setelahnya menjadi majrur"
+    },
+    "أَنْ": {
+      "type": "harf",
+      "name": "harf nashiib",
+      "meaning": "bahwa / untuk",
+      "category": "subordinating_conjunction",
+      "usage": "menghubungkan kalimat dan menyebabkan fi'il mudhari menjadi manshub"
+    },
+    "لَمْ": {
+      "type": "harf",
+      "name": "lam nafi jazm",
+      "meaning": "tidak (menyatakan penafsian masa lampau)",
+      "category": "negation_jazm",
+      "usage": "menyebabkan fi'il mudhari menjadi majzum"
+    },
+    "لَا": {
+      "type": "harf",
+      "name": "laa nafi",
+      "meaning": "tidak",
+      "category": "negation",
+      "usage": "menafikan; dalam konteks nahi menyebabkan fi'il mudhari menjadi majzum"
+    },
+    "الْ": {
+      "type": "harf",
+      "name": "alif lam ta'rif",
+      "meaning": "the / yang (definite article)",
+      "category": "definite_article",
+      "usage": "menjadikan isim menjadi ma'rifah (tertentu)"
+    },
+    "هَذَا": {
+      "type": "ism",
+      "name": "ism isyarah",
+      "meaning": "ini",
+      "category": "demonstrative",
+      "usage": "menunjukkan benda atau orang yang dekat"
+    },
+    "ذَلِكَ": {
+      "type": "ism",
+      "name": "ism isyarah",
+      "meaning": "itu",
+      "category": "demonstrative",
+      "usage": "menunjukkan benda atau orang yang jauh"
+    }
+  }
+}

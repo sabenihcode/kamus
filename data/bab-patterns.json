@@ -1,0 +1,118 @@
+{
+  "tsulatsi_mujarrad": {
+    "فَعَلَ - يَفْعُلُ": {
+      "name": "فَعَلَ - يَفْعُلُ",
+      "group": "tsulatsi_mujarrad",
+      "madhi_vowel": "fathah",
+      "mudhari_vowel": "dhammah",
+      "example": "كَتَبَ - يَكْتُبُ",
+      "meaning_pattern": "fi'il madhi dengan fathah, mudhari dengan dhammah"
+    },
+    "فَعَلَ - يَفْعِلُ": {
+      "name": "فَعَلَ - يَفْعِلُ",
+      "group": "tsulatsi_mujarrad",
+      "madhi_vowel": "fathah",
+      "mudhari_vowel": "kasrah",
+      "example": "جَلَسَ - يَجْلِسُ",
+      "meaning_pattern": "fi'il madhi dengan fathah, mudhari dengan kasrah"
+    },
+    "فَعَلَ - يَفْعَلُ": {
+      "name": "فَعَلَ - يَفْعَلُ",
+      "group": "tsulatsi_mujarrad",
+      "madhi_vowel": "fathah",
+      "mudhari_vowel": "fathah",
+      "example": "قَرَأَ - يَقْرَأُ",
+      "meaning_pattern": "fi'il madhi dengan fathah, mudhari dengan fathah"
+    },
+    "فَعِلَ - يَفْعَلُ": {
+      "name": "فَعِلَ - يَفْعَلُ",
+      "group": "tsulatsi_mujarrad",
+      "madhi_vowel": "kasrah",
+      "mudhari_vowel": "fathah",
+      "example": "فَهِمَ - يَفْهَمُ",
+      "meaning_pattern": "fi'il madhi dengan kasrah, mudhari dengan fathah"
+    },
+    "فَعُلَ - يَفْعُلُ": {
+      "name": "فَعُلَ - يَفْعُلُ",
+      "group": "tsulatsi_mujarrad",
+      "madhi_vowel": "dhammah",
+      "mudhari_vowel": "dhammah",
+      "example": "قَرُبَ - يَقْرُبُ",
+      "meaning_pattern": "fi'il madhi dengan dhammah, mudhari dengan dhammah"
+    }
+  },
+  "tsulatsi_mazid": {
+    "أَفْعَلَ": {
+      "name": "أَفْعَلَ - يُفْعِلُ",
+      "group": "tsulatsi_mazid",
+      "pattern": "أَفْعَلَ",
+      "example": "أَخْرَجَ - يُخْرِجُ",
+      "meaning_pattern": "mengeluarkan / menyebabkan"
+    },
+    "فَعَّلَ": {
+      "name": "فَعَّلَ - يُفَعِّلُ",
+      "group": "tsulatsi_mazid",
+      "pattern": "فَعَّلَ",
+      "example": "قَرَّأَ - يُقَرِّئُ",
+      "meaning_pattern": "menyebabkan / membuat"
+    },
+    "فَاعَلَ": {
+      "name": "فَاعَلَ - يُفَاعِلُ",
+      "group": "tsulatsi_mazid",
+      "pattern": "فَاعَلَ",
+      "example": "كَاتَبَ - يُكَاتِبُ",
+      "meaning_pattern": "saling / berinteraksi"
+    },
+    "تَفَعَّلَ": {
+      "name": "تَفَعَّلَ - يَتَفَعَّلُ",
+      "group": "tsulatsi_mazid",
+      "pattern": "تَفَعَّلَ",
+      "example": "تَقَرَّأَ - يَتَقَرَّأُ",
+      "meaning_pattern": "bersikap / mengalami"
+    },
+    "تَفَاعَلَ": {
+      "name": "تَفَاعَلَ - يَتَفَاعَلُ",
+      "group": "tsulatsi_mazid",
+      "pattern": "تَفَاعَلَ",
+      "example": "تَكَاتَبَ - يَتَكَاتَبُ",
+      "meaning_pattern": "saling (refleksif)"
+    },
+    "اِنْفَعَلَ": {
+      "name": "اِنْفَعَلَ - يَنْفَعِلُ",
+      "group": "tsulatsi_mazid",
+      "pattern": "اِنْفَعَلَ",
+      "example": "اِنْكَسَرَ - يَنْكَسِرُ",
+      "meaning_pattern": "ter- / dipasif"
+    },
+    "اِفْتَعَلَ": {
+      "name": "اِفْتَعَلَ - يَفْتَعِلُ",
+      "group": "tsulatsi_mazid",
+      "pattern": "اِفْتَعَلَ",
+      "example": "اِجْتَمَعَ - يَجْتَمِعُ",
+      "meaning_pattern": "berbuat / mengambil"
+    },
+    "اِسْتَفْعَلَ": {
+      "name": "اِسْتَفْعَلَ - يَسْتَفْعِلُ",
+      "group": "tsulatsi_mazid",
+      "pattern": "اِسْتَفْعَلَ",
+      "example": "اِسْتَخْرَجَ - يَسْتَخْرِجُ",
+      "meaning_pattern": "meminta / menyatakan"
+    }
+  },
+  "ruba'i": {
+    "فَعْلَلَ": {
+      "name": "فَعْلَلَ - يَفْعْلِلُ",
+      "group": "ruba'i",
+      "pattern": "فَعْلَلَ",
+      "example": "دَحْرَجَ - يَدْحَرِجُ",
+      "meaning_pattern": "fi'il ruba'i mujarrad"
+    },
+    "تَفَعْلَلَ": {
+      "name": "تَفَعْلَلَ - يَتَفَعْلَلُ",
+      "group": "ruba'i",
+      "pattern": "تَفَعْلَلَ",
+      "example": "تَدَحْرَجَ - يَتَدَحْرَجُ",
+      "meaning_pattern": "ber- / mengalami"
+    }
+  }
+}

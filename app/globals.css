@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans Arabic", sans-serif;
+  }
+
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+
+  [dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+  }
+}
+
+@layer components {
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    font-size: 0.875rem;
+  }
+
+  .prose th,
+  .prose td {
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 0.75rem;
+    text-align: start;
+  }
+
+  .prose th {
+    background-color: #f8fafc;
+    font-weight: 600;
+  }
+
+  .prose-invert th {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .prose-invert td {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .prose h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .prose p {
+    margin: 0.5rem 0;
+  }
+
+  .prose strong {
+    font-weight: 600;
+  }
+
+  .prose ul,
+  .prose ol {
+    margin: 0.5rem 0;
+    padding-inline-start: 1.25rem;
+  }
+
+  .prose li {
+    margin: 0.25rem 0;
+  }
+}

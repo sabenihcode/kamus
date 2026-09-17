@@ -1,0 +1,147 @@
+{
+  "types": {
+    "isim_fa'il": {
+      "name": "Isim Fa'il",
+      "nameAr": "اسم الفاعل",
+      "description": "Menunjukkan pelaku perbuatan",
+      "wazan": "فَاعِلٌ",
+      "examples": ["كَاتِبٌ", "قَارِئٌ", "نَاصِرٌ"]
+    },
+    "isim_maf'ul": {
+      "name": "Isim Maf'ul",
+      "nameAr": "اسم المفعول",
+      "description": "Menunjukkan objek perbuatan",
+      "wazan": "مَفْعُولٌ",
+      "examples": ["مَكْتُوبٌ", "مَقْرُوءٌ", "مَنْصُورٌ"]
+    },
+    "isim_makan": {
+      "name": "Isim Makan",
+      "nameAr": "اسم المكان",
+      "description": "Menunjukkan tempat",
+      "wazan": "مَفْعَلٌ / مَفْعِلٌ / مَفْعَلَةٌ",
+      "examples": ["مَدْرَسَةٌ", "مَسْجِدٌ", "مَكْتَبٌ"]
+    },
+    "isim_zaman": {
+      "name": "Isim Zaman",
+      "nameAr": "اسم الزمان",
+      "description": "Menunjukkan waktu",
+      "wazan": "مَفْعَلٌ / مَفْعِلٌ",
+      "examples": ["مَطْلَعٌ", "مَغْرِبٌ", "سَاعَةٌ"]
+    },
+    "isim_alat": {
+      "name": "Isim Alat",
+      "nameAr": "اسم الآلة",
+      "description": "Menunjukkan alat",
+      "wazan": "مِفْعَلٌ / مِفْعَالٌ",
+      "examples": ["مِفْتَاحٌ", "مِصْبَاحٌ", "مِكْنَسَةٌ"]
+    },
+    "sifat_musyabbahah": {
+      "name": "Sifat Musyabbahah",
+      "nameAr": "الصفة المشبهة",
+      "description": "Sifat yang tetap/melekat",
+      "wazan": "فَعِيلٌ / فَعْلَانٌ",
+      "examples": ["كَرِيمٌ", "جَمِيلٌ", "عَظِيمٌ"]
+    },
+    "isim_jamid": {
+      "name": "Isim Jamid",
+      "nameAr": "الاسم الجامد",
+      "description": "Kata benda asli (tidak dari fi'il)",
+      "wazan": "—",
+      "examples": ["كِتَابٌ", "قَلَمٌ", "بَيْتٌ"]
+    },
+    "isim_dhomir": {
+      "name": "Isim Dhomir",
+      "nameAr": "الضمير",
+      "description": "Kata ganti",
+      "wazan": "—",
+      "examples": ["أَنَا", "هُوَ", "هِيَ"]
+    },
+    "masdar": {
+      "name": "Masdar",
+      "nameAr": "المصدر",
+      "description": "Nama perbuatan",
+      "wazan": "فَعْلٌ / فِعْلٌ / فُعْلٌ / فِعَالَةٌ",
+      "examples": ["كِتَابَةٌ", "قِرَاءَةٌ", "نَصْرٌ"]
+    }
+  },
+  "patterns": {
+    "فَاعِلٌ": {
+      "pattern": "فَاعِلٌ",
+      "type": "isim_fa'il",
+      "meaning": "pelaku / yang melakukan",
+      "example": "كَاتِبٌ (penulis)"
+    },
+    "مَفْعُولٌ": {
+      "pattern": "مَفْعُولٌ",
+      "type": "isim_maf'ul",
+      "meaning": "objek / yang dikenai perbuatan",
+      "example": "مَكْتُوبٌ (yang ditulis)"
+    },
+    "فِعْلٌ": {
+      "pattern": "فِعْلٌ",
+      "type": "masdar",
+      "meaning": "nama perbuatan / masdar",
+      "example": "عِلْمٌ (ilmu)"
+    },
+    "فِعَالَةٌ": {
+      "pattern": "فِعَالَةٌ",
+      "type": "masdar",
+      "meaning": "nama perbuatan (perempuan / abstrak)",
+      "example": "كِتَابَةٌ (penulisan)"
+    },
+    "فِعَالٌ": {
+      "pattern": "فِعَالٌ",
+      "type": "masdar",
+      "meaning": "nama perbuatan / sifat",
+      "example": "لِقَاءٌ (pertemuan)"
+    },
+    "مَفْعَلَةٌ": {
+      "pattern": "مَفْعَلَةٌ",
+      "type": "isim_makan",
+      "meaning": "tempat / waktu perbuatan (feminin)",
+      "example": "مَكْتَبَةٌ (perpustakaan)"
+    },
+    "مَفْعَلٌ": {
+      "pattern": "مَفْعَلٌ",
+      "type": "isim_makan",
+      "meaning": "tempat / waktu perbuatan",
+      "example": "مَجْلِسٌ (majelis)"
+    },
+    "مَفْعِلٌ": {
+      "pattern": "مَفْعِلٌ",
+      "type": "isim_makan",
+      "meaning": "tempat / waktu perbuatan",
+      "example": "مَسْجِدٌ (masjid)"
+    },
+    "مِفْعَالٌ": {
+      "pattern": "مِفْعَالٌ",
+      "type": "isim_alat",
+      "meaning": "alat / instrumen",
+      "example": "مِفْتَاحٌ (kunci)"
+    },
+    "مِفْعَلٌ": {
+      "pattern": "مِفْعَلٌ",
+      "type": "isim_alat",
+      "meaning": "alat / instrumen",
+      "example": "مِصْبَاحٌ (lampu)"
+    },
+    "فُعْلَةٌ": {
+      "pattern": "فُعْلَةٌ",
+      "type": "isim_jamid",
+      "meaning": "kata benda abstrak",
+      "example": "قُرْبَةٌ (pendekatan)"
+    },
+    "فَعِيلٌ": {
+      "pattern": "فَعِيلٌ",
+      "type": "sifat_musyabbahah",
+      "meaning": "sifat yang melekat",
+      "example": "كَرِيمٌ (mulia)"
+    },
+    "فَيْعَلٌ": {
+      "pattern": "فَيْعَلٌ",
+      "type": "isim_jamid",
+      "meaning": "kata benda asli",
+      "example": "بَيْتٌ (rumah)"
+    }
+  }
+}
