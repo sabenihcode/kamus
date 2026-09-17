@@ -17,10 +17,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const analysis = analyzeMessage(message, conversation);
-    const datasetContext = buildDatasetContext(analysis);
+    const localAnalysis = analyzeMessage(message, conversation);
+    const datasetContext = buildDatasetContext(localAnalysis);
 
-    const systemPrompt = buildSystemPrompt(datasetContext, analysis);
+    const systemPrompt = buildJsonSystemPrompt(datasetContext, message);
 
     const messages = [
       ...conversation,
@@ -28,13 +28,21 @@ export async function POST(request: NextRequest) {
     ];
 
     let aiResponse: string;
+    let parsed: AIParsedResponse | null = null;
 
     try {
       aiResponse = await generateCohereResponse(systemPrompt, messages);
+      parsed = parseAIResponse(aiResponse);
     } catch (error) {
       const err = error instanceof Error ? error : new Error(String(error));
       console.error("Cohere API error:", err.message);
-      aiResponse = generateFallbackResponse(analysis, err.message);
+      parsed = buildFallbackFromLocal(localAnalysis, err.message);
+      aiResponse = parsed.message;
+    }
+
+    // Merge with local analysis if AI returned partial/invalid data
+    if (!parsed) {
+      parsed = buildFallbackFromLocal(localAnalysis);
     }
 
     const responsePayload: {
@@ -45,34 +53,19 @@ export async function POST(request: NextRequest) {
       isim?: Record<string, unknown> | null;
     } = {
       success: true,
-      message: aiResponse,
-      analysis: {},
-      tashrif: null,
-      isim: null,
+      message: parsed.message,
     };
 
-    if (analysis.primaryWord) {
-      const pw = analysis.primaryWord;
-      responsePayload.analysis = {
-        word: pw.word,
-        type: pw.type,
-        category: pw.category,
-        root: pw.root,
-        wazan: pw.wazan,
-        bab: pw.bab,
-        meaning: pw.meaning,
-        prefix: pw.prefix,
-        suffix: pw.suffix,
-        baseWord: pw.baseWord,
-      };
+    if (parsed.analysis && Object.keys(parsed.analysis).length > 0) {
+      responsePayload.analysis = parsed.analysis;
+    }
 
-      if (analysis.tashrif) {
-        responsePayload.tashrif = analysis.tashrif;
-      }
+    if (parsed.tashrif && Object.keys(parsed.tashrif).length > 0) {
+      responsePayload.tashrif = parsed.tashrif;
+    }
 
-      if (analysis.isimAnalysis) {
-        responsePayload.isim = analysis.isimAnalysis as unknown as Record<string, unknown>;
-      }
+    if (parsed.isim && Object.keys(parsed.isim).length > 0) {
+      responsePayload.isim = parsed.isim;
     }
 
     return NextResponse.json(responsePayload);
@@ -85,68 +78,139 @@ export async function POST(request: NextRequest) {
   }
 }
 
-function buildSystemPrompt(
-  datasetContext: string,
-  analysis: ReturnType<typeof analyzeMessage>
-): string {
-  const ctx = analysis.context;
-  const hasMultipleWords = analysis.words.length > 1;
-
-  let instruction = `Kamu adalah Arabic AI, asisten AI untuk bahasa Arab. Kamu menjawab dalam bahasa Indonesia dengan format yang bersih dan profesional. Prioritaskan jawaban langsung, gunakan tabel Markdown jika relevan, dan hindari pengantar panjang, emoji, serta penutup seperti "Semoga membantu".
-
-ATURAN PENTING:
-- Gunakan HANYA data morfologi dari dataset di bawah ini.
-- Jika kata tidak ditemukan dalam dataset, katakan "Kata ini belum tersedia dalam dataset." dan jangan membuat data seperti akar, wazan, atau arti.
-- Jangan mengarang (hallucinate) informasi morfologi.
-- Untuk frasa/kalimat, identifikasi kata asli dengan melepas awalan seperti وَ, الْ, بِ, كِ, لِ, فَ, ثُمَّ, dll.
-
-Data morfologi dari dataset (jika tersedia):
-${datasetContext}
-
-`;
-
-  if (analysis.primaryWord?.type === "unknown") {
-    instruction += `Kata Arab yang diberikan pengguna TIDAK DITEMUKAN dalam dataset. Jawab dengan jelas: "Kata ${analysis.primaryWord.word} belum tersedia dalam dataset." Jangan membuat tabel analisis, akar, wazan, atau arti. Jelaskan bahwa pengguna dapat menambahkannya ke data/dictionary.json.`;
-  } else if (hasMultipleWords || ctx.asksForSentenceAnalysis) {
-    instruction += `Pengguna memberikan frasa/kalimat bahasa Arab. Untuk SETIAP kata Arab, tentukan kata aslinya dengan melepas awalan seperti وَ (dan), الْ (al-), بِ, كِ, لِ, فَ, لِ, ثُمَّ, dll. Berikan tabel analisis per kata dengan kolom: Kata Asli, Jenis, Analisis, Arti. Jika diminta i'rab, tambahkan tabel i'rab. Berikan terjemahan singkat frasa/kalimat tersebut.`;
-  } else if (analysis.isimAnalysis) {
-    instruction += `Pengguna menanyakan tentang sebuah isim. Berikan analisis lengkap: tipe isim, akar kata, wazan, arti, gender (mudzakkar/muannats), dan bentuk-bentuknya (mufrad, mutsanna, jamak).`;
-  } else if (ctx.asksForTashrif && analysis.tashrif) {
-    instruction += `Pengguna meminta tashrif. Tampilkan tabel Tashrif dengan kolom: Bentuk, Arab, Arti. Sertakan semua bentuk yang tersedia: Madhi, Mudhari', Masdar, Isim Fa'il, Isim Maf'ul, Amr, Nahi, Mudhari' Majhul.`;
-  } else if (ctx.asksForRoot && analysis.primaryWord?.root) {
-    instruction += `Pengguna menanyakan akar kata. Jawab singkat dengan menyebutkan akar kata dan arti intinya.`;
-  } else if (ctx.asksForWazan && analysis.primaryWord?.wazan) {
-    instruction += `Pengguna menanyakan wazan. Jawab singkat dengan menyebutkan wazan dan kategorinya.`;
-  } else if (ctx.asksForIsimFaIl && analysis.tashrif?.["isim_fa'il"]) {
-    instruction += `Pengguna menanyakan isim fa'il. Jawab langsung dengan isim fa'il dan artinya.`;
-  } else if (ctx.asksForIsimMafUl && analysis.tashrif?.["isim_maf'ul"]) {
-    instruction += `Pengguna menanyakan isim maf'ul. Jawab langsung dengan isim maf'ul dan artinya.`;
-  } else if (ctx.asksForMeaning && analysis.primaryWord?.meaning) {
-    instruction += `Pengguna menanyakan arti. Jawab singkat dengan arti kata dalam bahasa Indonesia.`;
-  } else if (analysis.primaryWord) {
-    instruction += `Analisis kata Arab yang diberikan pengguna. Gunakan tabel dengan kolom Analisis dan Hasil. Tampilkan hanya field yang relevan dan tersedia: Jenis, Kategori, Bab, Akar, Wazan, Arti.`;
-  } else {
-    instruction += `Jawab pertanyaan pengguna secara alami dan bermanfaat. Jika ada kata Arab, bantu analisis sesuai kebutuhan.`;
-  }
-
-  if (ctx.asksForExplanation && !ctx.asksForWhy) {
-    instruction += `\n\nBeri penjelasan yang lebih rinci karena pengguna meminta "jelaskan". Tetap gunakan tabel dan format yang terstruktur.`;
-  }
-
-  if (ctx.asksForWhy) {
-    instruction += `\n\nJelaskan alasan gramatikal atau morfologisnya karena pengguna bertanya "kenapa".`;
-  }
-
-  return instruction;
+interface AIParsedResponse {
+  message: string;
+  analysis?: Record<string, unknown>;
+  tashrif?: Record<string, unknown>;
+  isim?: Record<string, unknown>;
 }
 
-function generateFallbackResponse(
+function buildJsonSystemPrompt(datasetContext: string, message: string): string {
+  return `Kamu adalah Arabic AI, asisten ahli bahasa Arab. Tugas utama kamu adalah menganalisis kata, frasa, atau kalimat bahasa Arab yang diberikan pengguna dan mengembalikan hasilnya dalam format JSON yang ketat.
+
+ATURAN PENTING:
+1. Kamu adalah sumber data utama. Jelaskan morfologi, akar kata, wazan, bab, dan arti berdasarkan pengetahuan bahasa Arab kamu.
+2. Jangan mengarang jika kamu tidak yakin. Jika kata tidak dikenal, tetap berikan analisis terbaik dengan catatan "belum pasti" atau katakan tidak tersedia.
+3. Untuk fi'il, berikan Tashrif lengkap jika memungkinkan.
+4. Untuk isim, berikan tipe isim, gender, dan bentuk-bentuk (mufrad, mutsanna, jamak) jika relevan.
+5. Gunakan bahasa Indonesia yang bersih, profesional, tanpa emoji.
+6. Respons HARUS berupa JSON valid, tanpa teks di luar JSON, tanpa markdown code block.
+
+Data referensi dari dataset lokal (jika tersedia):
+${datasetContext}
+
+Struktur JSON yang harus dikembalikan:
+
+{
+  "message": "Penjelasan singkat dalam bahasa Indonesia. Prioritaskan jawaban langsung, gunakan tabel Markdown jika relevan.",
+  "analysis": {
+    "word": "kata asli tanpa awalan/akhiran",
+    "type": "fi'il | isim | harf | unknown",
+    "category": "tsulatsi_mujarrad | tsulatsi_mazid | isim_fa'il | isim_maf'ul | masdar | isim_jamid | isim_dhomir | sifat_musyabbahah | dsb.",
+    "bab": "contoh: فَعَلَ - يَفْعُلُ",
+    "root": ["ح", "ر", "ف"],
+    "wazan": "contoh: فَاعِلٌ",
+    "meaning": "arti dalam bahasa Indonesia",
+    "prefix": "awalan jika ada, contoh: ال atau و",
+    "suffix": "akhiran jika ada, contoh: ين atau ات",
+    "baseWord": "kata dasar sebelum awalan/akhiran"
+  },
+  "tashrif": {
+    "madhi": "...",
+    "mudhari": "...",
+    "masdar": "...",
+    "isim_fa'il": "...",
+    "isim_maf'ul": "...",
+    "amr": "...",
+    "nahi": "...",
+    "mudhari_majhul": "..."
+  },
+  "isim": {
+    "type": "Isim Fa'il",
+    "typeAr": "اسم الفاعل",
+    "description": "...",
+    "root": ["ح", "ر", "ف"],
+    "wazan": "فَاعِلٌ",
+    "meaning": "...",
+    "gender": "Mudzakkar",
+    "genderAr": "مذكر",
+    "forms": [
+      { "label": "Mufrad", "labelAr": "مفرد", "arabic": "...", "meaning": "Tunggal" },
+      { "label": "Mutsanna", "labelAr": "مثنى", "arabic": "...", "meaning": "Dua" },
+      { "label": "Jamak", "labelAr": "جمع", "arabic": "...", "meaning": "Banyak" }
+    ]
+  }
+}
+
+Catatan:
+- "tashrif" hanya untuk fi'il.
+- "isim" hanya untuk isim.
+- Jika bukan fi'il atau isim, boleh kosongkan field tersebut.
+- Jika kata tidak dikenal, analysis.type = "unknown" dan message menjelaskannya.
+
+Pesan pengguna: ${message}`;
+}
+
+function parseAIResponse(text: string): AIParsedResponse | null {
+  // Remove markdown code block if present
+  const cleaned = text
+    .replace(/^```json\s*/i, "")
+    .replace(/^```\s*/i, "")
+    .replace(/```\s*$/i, "")
+    .trim();
+
+  try {
+    const parsed = JSON.parse(cleaned) as AIParsedResponse;
+    return {
+      message: parsed.message || "",
+      analysis: parsed.analysis || {},
+      tashrif: parsed.tashrif || {},
+      isim: parsed.isim || {},
+    };
+  } catch (error) {
+    console.error("Failed to parse AI response as JSON:", error);
+    console.error("Raw response:", text);
+    return null;
+  }
+}
+
+function buildFallbackFromLocal(
+  localAnalysis: ReturnType<typeof analyzeMessage>,
+  cohereError?: string
+): AIParsedResponse {
+  const pw = localAnalysis.primaryWord;
+  const message = generateFallbackMessage(localAnalysis, cohereError);
+
+  const analysis: Record<string, unknown> = {};
+  if (pw) {
+    analysis.word = pw.word;
+    analysis.type = pw.type;
+    analysis.category = pw.category;
+    analysis.root = pw.root;
+    analysis.wazan = pw.wazan;
+    analysis.bab = pw.bab;
+    analysis.meaning = pw.meaning;
+    analysis.prefix = pw.prefix;
+    analysis.suffix = pw.suffix;
+    analysis.baseWord = pw.baseWord;
+  }
+
+  return {
+    message,
+    analysis,
+    tashrif: localAnalysis.tashrif || {},
+    isim: localAnalysis.isimAnalysis
+      ? (localAnalysis.isimAnalysis as unknown as Record<string, unknown>)
+      : {},
+  };
+}
+
+function generateFallbackMessage(
   analysis: ReturnType<typeof analyzeMessage>,
   cohereError?: string
 ): string {
   const pw = analysis.primaryWord;
 
-  // Phrase / sentence analysis
   if (analysis.words.length > 1) {
     const lines: string[] = [];
     lines.push("### Analisis Kata");
@@ -166,45 +230,17 @@ function generateFallbackResponse(
       lines.push(`| ${w.word} | ${base} | ${w.type} | ${detail || "—"} | ${meaning} |`);
     }
 
-    lines.push("");
-    lines.push("**Catatan:** Jika ada kata yang belum dikenali, tambahkan ke dataset agar analisis lebih lengkap.");
     return lines.join("\n");
   }
 
-  // Single isim analysis
-  if (pw?.type === "isim" && analysis.isimAnalysis) {
-    const isim = analysis.isimAnalysis;
-    const lines: string[] = [];
-    lines.push(`### ${isim.word}`);
-    lines.push("");
-    lines.push(`**Tipe:** ${isim.type} (${isim.typeAr})`);
-    lines.push(`**Akar:** ${isim.root.join(" - ")}`);
-    lines.push(`**Wazan:** ${isim.wazan}`);
-    lines.push(`**Gender:** ${isim.gender} (${isim.genderAr})`);
-    lines.push(`**Arti:** ${isim.meaning}`);
-    lines.push("");
-    lines.push("### Bentuk-bentuk");
-    lines.push("");
-    lines.push("| Bentuk | Arab | Makna |");
-    lines.push("| ------ | ---- | ----- |");
-    for (const form of isim.forms) {
-      lines.push(`| ${form.label} (${form.labelAr}) | ${form.arabic} | ${form.meaning} |`);
-    }
-    return lines.join("\n");
-  }
-
-  // Single word analysis
   if (!pw) {
-    return `Maaf, saya tidak dapat mengenali kata **${analysis.words[0]?.word || ""}**. Kata ini belum tersedia dalam dataset. Silakan tambahkan ke data/dictionary.json agar bisa dianalisis dengan akurat.`;
+    return "Maaf, saya tidak dapat mengenali pesan tersebut. Silakan coba dengan kata atau kalimat bahasa Arab.";
   }
 
-  // Unknown word with no useful info
   if (pw.type === "unknown" && !pw.root && !pw.meaning) {
-    let msg = `Kata **${pw.word}** belum tersedia dalam dataset. Sistem tidak dapat mengenali akar, wazan, atau artinya.`;
+    let msg = `Kata **${pw.word}** belum dapat dianalisis.`;
     if (cohereError) {
       msg += `\n\nCatatan: Cohere AI tidak dapat digunakan (${cohereError}). Respons ini berasal dari fallback dataset.`;
-    } else {
-      msg += " Silakan tambahkan ke data/dictionary.json agar bisa dianalisis.";
     }
     return msg;
   }
