@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { analyzeMessage, buildDatasetContext } from "@/lib/analyzer";
 import { generateCohereResponse } from "@/lib/cohere";
+import { validateAndCorrect } from "@/lib/ai-validator";
 
 export async function POST(request: NextRequest) {
   try {
@@ -37,13 +38,14 @@ export async function POST(request: NextRequest) {
       const err = error instanceof Error ? error : new Error(String(error));
       console.error("Cohere API error:", err.message);
       parsed = buildFallbackFromLocal(localAnalysis, err.message);
-      aiResponse = parsed.message;
     }
 
-    // Merge with local analysis if AI returned partial/invalid data
     if (!parsed) {
       parsed = buildFallbackFromLocal(localAnalysis);
     }
+
+    // Validate and correct AI output using local dataset and rules
+    const corrected = validateAndCorrect(parsed, message);
 
     const responsePayload: {
       success: boolean;
@@ -53,19 +55,19 @@ export async function POST(request: NextRequest) {
       isim?: Record<string, unknown> | null;
     } = {
       success: true,
-      message: parsed.message,
+      message: corrected.message,
     };
 
-    if (parsed.analysis && Object.keys(parsed.analysis).length > 0) {
-      responsePayload.analysis = parsed.analysis;
+    if (corrected.analysis && Object.keys(corrected.analysis).length > 0) {
+      responsePayload.analysis = corrected.analysis;
     }
 
-    if (parsed.tashrif && Object.keys(parsed.tashrif).length > 0) {
-      responsePayload.tashrif = parsed.tashrif;
+    if (corrected.tashrif && Object.keys(corrected.tashrif).length > 0) {
+      responsePayload.tashrif = corrected.tashrif;
     }
 
-    if (parsed.isim && Object.keys(parsed.isim).length > 0) {
-      responsePayload.isim = parsed.isim;
+    if (corrected.isim && Object.keys(corrected.isim).length > 0) {
+      responsePayload.isim = corrected.isim;
     }
 
     return NextResponse.json(responsePayload);
@@ -80,7 +82,7 @@ export async function POST(request: NextRequest) {
 
 interface AIParsedResponse {
   message: string;
-  analysis?: Record<string, unknown>;
+  analysis: Record<string, unknown>;
   tashrif?: Record<string, unknown>;
   isim?: Record<string, unknown>;
 }
@@ -99,10 +101,10 @@ ATURAN PENTING:
 Data referensi dari dataset lokal (jika tersedia):
 ${datasetContext}
 
-Struktur JSON yang harus dikembalikan:
+Struktur JSON yang harus dikembalikan (INI HANYA CONTOH STRUKTUR, ISI SESUAI DENGAN KATA YANG DITANYAKAN):
 
 {
-  "message": "Penjelasan singkat dalam bahasa Indonesia. Prioritaskan jawaban langsung, gunakan tabel Markdown jika relevan.",
+  "message": "[ISI DENGAN KALIMAT PENJELASAN ANDA SENDIRI DALAM BAHASA INDONESIA, JANGAN SALIN TEKS INI]",
   "analysis": {
     "word": "kata asli tanpa awalan/akhiran",
     "type": "fi'il | isim | harf | unknown",
@@ -111,6 +113,7 @@ Struktur JSON yang harus dikembalikan:
     "root": ["ح", "ر", "ف"],
     "wazan": "contoh: فَاعِلٌ",
     "meaning": "arti dalam bahasa Indonesia",
+    "translation": "arti dalam bahasa Indonesia",
     "prefix": "awalan jika ada, contoh: ال atau و",
     "suffix": "akhiran jika ada, contoh: ين atau ات",
     "baseWord": "kata dasar sebelum awalan/akhiran"
@@ -132,6 +135,7 @@ Struktur JSON yang harus dikembalikan:
     "root": ["ح", "ر", "ف"],
     "wazan": "فَاعِلٌ",
     "meaning": "...",
+    "translation": "...",
     "gender": "Mudzakkar",
     "genderAr": "مذكر",
     "forms": [
@@ -145,14 +149,13 @@ Struktur JSON yang harus dikembalikan:
 Catatan:
 - "tashrif" hanya untuk fi'il.
 - "isim" hanya untuk isim.
-- Jika bukan fi'il atau isim, boleh kosongkan field tersebut.
+- "translation" wajib dalam bahasa Indonesia.
 - Jika kata tidak dikenal, analysis.type = "unknown" dan message menjelaskannya.
 
 Pesan pengguna: ${message}`;
 }
 
 function parseAIResponse(text: string): AIParsedResponse | null {
-  // Remove markdown code block if present
   const cleaned = text
     .replace(/^```json\s*/i, "")
     .replace(/^```\s*/i, "")
@@ -166,7 +169,7 @@ function parseAIResponse(text: string): AIParsedResponse | null {
       analysis: parsed.analysis || {},
       tashrif: parsed.tashrif || {},
       isim: parsed.isim || {},
-    };
+    } as AIParsedResponse;
   } catch (error) {
     console.error("Failed to parse AI response as JSON:", error);
     console.error("Raw response:", text);
@@ -190,9 +193,10 @@ function buildFallbackFromLocal(
     analysis.wazan = pw.wazan;
     analysis.bab = pw.bab;
     analysis.meaning = pw.meaning;
-    analysis.prefix = pw.prefix;
-    analysis.suffix = pw.suffix;
-    analysis.baseWord = pw.baseWord;
+    analysis.translation = pw.meaning;
+    analysis.prefix = pw.prefix || null;
+    analysis.suffix = pw.suffix || null;
+    analysis.baseWord = pw.baseWord || pw.word;
   }
 
   return {
